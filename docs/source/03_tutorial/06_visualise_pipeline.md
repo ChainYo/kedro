@@ -111,12 +111,9 @@ We have also used the Plotly integration to allow users to [visualise metrics fr
   .. note:: Kedro's Plotly integration only supports `Plotly Express <https://plotly.com/python/plotly-express/>` charts. 
 ```
 
-You need to update requirements.txt in your kedro project and add the following datasets to enable plotly for your project. 
+You can view Plotly charts in Kedro-Viz when you use Kedro's plotly datasets. To enable Plotly you need to update requirements.txt in your kedro project and add either or both of the below datasets. 
 
  `kedro[plotly.PlotlyDataSet, plotly.JSONDataSet]==0.xx.x`
-
-
-You can view Plotly charts in Kedro-Viz when you use Kedro's plotly datasets.
 
 There are two types of plotly datasets in Kedro :
 - [plotly.PlotlyDataSet](https://kedro.readthedocs.io/en/stable/kedro.extras.datasets.plotly.PlotlyDataSet.html#kedro.extras.datasets.plotly.PlotlyDataSet) - To use this dataset you need to configure your plot in the `catalog.yml`.
@@ -199,6 +196,7 @@ shuttle_speed_comparison_plot:
   type: plotly.JSONDataSet
   filepath: data/08_reporting/shuttle_speed_comparison_plot.json
 ```
+
 
 Once the above setup is completed, you can do a `kedro run` followed by `kedro viz` and your Kedro-Viz pipeline will show a new dataset type with icon ![](../meta/images/icon-image-dataset.svg) . Once you click on the node, you can see a small preview of your Plotly chart in the metadata panel.
 
